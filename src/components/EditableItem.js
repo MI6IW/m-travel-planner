@@ -63,6 +63,4 @@ function EditableItem({ item, setItem, onSave, onCancel, isLink, isExpense, apiK
     );
 }
 
-// Новый компонент уведомлений для замены alert()
-function Notification({ notification, onClear }) {
 export default EditableItem;

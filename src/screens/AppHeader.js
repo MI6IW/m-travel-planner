@@ -19,4 +19,6 @@ function AppHeader({ onNewTrip, onSettings, toggleTheme, theme, t }) {
             </div>
         </header>
     );
+}
+
 export default AppHeader;
