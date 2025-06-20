@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import EditTripModal from "../components/EditTripModal";
 import AddSectionModal from "../components/AddSectionModal";
 import { db } from "../firebase/firebase";
-import { ArrowLeftIcon, SuitcaseIcon, CameraIcon, LinkIcon, WalletIcon, PlusIcon, FolderPlusIcon, EditIcon } from "../components/icons";
+import { ArrowLeftIcon, SuitcaseIcon, CameraIcon, LinkIcon, WalletIcon, PlusIcon, FolderPlusIcon, EditIcon, MapPinIcon, CalendarIcon } from "../components/icons";
 function TripScreen({ userId, tripId, onSelectSection, onBack, t, showNotification }) {
     const [trip, setTrip] = useState(null);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);

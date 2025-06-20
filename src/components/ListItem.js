@@ -37,5 +37,4 @@ function ListItem({ item, onEdit, onDelete, onToggleComplete, isLink }) {
     );
 }
 
-function EditableItem({ item, setItem, onSave, onCancel, isLink, isExpense, apiKey, tripLocation, language, t, model, showNotification }) {
 export default ListItem;
