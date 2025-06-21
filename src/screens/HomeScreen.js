@@ -6,6 +6,7 @@ import EditTripModal from "../components/EditTripModal";
 import ConfirmationModal from "../components/ConfirmationModal";
 import { db } from "../firebase/firebase";
 import { TrashIcon } from "../components/icons";
+import PropTypes from "prop-types";
 function HomeScreen({ userId, onSelectTrip, t }) {
     const [trips, setTrips] = useState([]);
     const [editingTrip, setEditingTrip] = useState(null);
@@ -102,3 +103,9 @@ function HomeScreen({ userId, onSelectTrip, t }) {
 }
 
 export default HomeScreen;
+
+HomeScreen.propTypes = {
+    userId: PropTypes.string,
+    onSelectTrip: PropTypes.func.isRequired,
+    t: PropTypes.object.isRequired,
+};

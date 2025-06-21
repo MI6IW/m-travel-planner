@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { PlusIcon, SettingsIcon, MoonIcon, SunIcon } from "../components/icons";
 function AppHeader({ onNewTrip, onSettings, toggleTheme, theme, t }) {
     return (
@@ -22,3 +23,11 @@ function AppHeader({ onNewTrip, onSettings, toggleTheme, theme, t }) {
 }
 
 export default AppHeader;
+
+AppHeader.propTypes = {
+    onNewTrip: PropTypes.func.isRequired,
+    onSettings: PropTypes.func.isRequired,
+    toggleTheme: PropTypes.func.isRequired,
+    theme: PropTypes.string.isRequired,
+    t: PropTypes.object.isRequired,
+};

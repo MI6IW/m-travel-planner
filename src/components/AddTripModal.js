@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import PropTypes from 'prop-types';
 import BaseModal from './BaseModal';
 import { db } from '../firebase/firebase';
 import { COLORS } from '../constants/colors';
@@ -54,3 +55,10 @@ export default function AddTripModal({ isOpen, onClose, userId, t }) {
     </BaseModal>
   );
 }
+
+AddTripModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  userId: PropTypes.string.isRequired,
+  t: PropTypes.object.isRequired,
+};

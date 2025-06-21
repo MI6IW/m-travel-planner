@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import BaseModal from './BaseModal';
 import { LANGUAGES, PREDEFINED_MODELS } from '../constants/languages';
 import { COUNTRIES } from '../constants/countries';
@@ -69,3 +70,17 @@ export default function SettingsModal({ isOpen, onClose, apiKey, setApiKey, home
     </BaseModal>
   );
 }
+
+SettingsModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  apiKey: PropTypes.string,
+  setApiKey: PropTypes.func.isRequired,
+  homeLocation: PropTypes.string,
+  setHomeLocation: PropTypes.func.isRequired,
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired,
+  model: PropTypes.string.isRequired,
+  setModel: PropTypes.func.isRequired,
+  t: PropTypes.object.isRequired,
+};

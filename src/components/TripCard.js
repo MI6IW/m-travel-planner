@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MapPinIcon, CalendarIcon, EditIcon, CheckCircleIcon, CircleIcon } from './icons';
 
 export default function TripCard({ trip, onNavigate, onEdit, onSelect, isSelected }) {
@@ -23,3 +24,11 @@ export default function TripCard({ trip, onNavigate, onEdit, onSelect, isSelecte
     </div>
   );
 }
+
+TripCard.propTypes = {
+  trip: PropTypes.object.isRequired,
+  onNavigate: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  isSelected: PropTypes.bool,
+};

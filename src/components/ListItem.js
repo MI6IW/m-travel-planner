@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircleIcon, CircleIcon, EditIcon, TrashIcon } from "./icons";
+import PropTypes from "prop-types";
 function ListItem({ item, onEdit, onDelete, onToggleComplete, isLink }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -38,3 +39,11 @@ function ListItem({ item, onEdit, onDelete, onToggleComplete, isLink }) {
 }
 
 export default ListItem;
+
+ListItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    onEdit: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    onToggleComplete: PropTypes.func.isRequired,
+    isLink: PropTypes.bool,
+};

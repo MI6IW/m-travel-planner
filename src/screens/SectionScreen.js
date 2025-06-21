@@ -3,6 +3,7 @@ import { onSnapshot, updateDoc, doc } from "firebase/firestore";
 import SectionDetail from "../components/SectionDetail";
 import { db } from "../firebase/firebase";
 import { ArrowLeftIcon } from "../components/icons";
+import PropTypes from "prop-types";
 function SectionScreen({ userId, tripId, sectionId, onBack, apiKey, language, t, model, showNotification }) {
     const [trip, setTrip] = useState(null);
     useEffect(() => {
@@ -56,3 +57,15 @@ function SectionScreen({ userId, tripId, sectionId, onBack, apiKey, language, t,
 
 // --- Компоненты ---
 export default SectionScreen;
+
+SectionScreen.propTypes = {
+    userId: PropTypes.string.isRequired,
+    tripId: PropTypes.string.isRequired,
+    sectionId: PropTypes.string.isRequired,
+    onBack: PropTypes.func.isRequired,
+    apiKey: PropTypes.string,
+    language: PropTypes.string,
+    t: PropTypes.object.isRequired,
+    model: PropTypes.string,
+    showNotification: PropTypes.func.isRequired,
+};
