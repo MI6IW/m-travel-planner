@@ -7,8 +7,8 @@ function SectionScreen({ userId, tripId, sectionId, onBack, apiKey, language, t,
     const [trip, setTrip] = useState(null);
     useEffect(() => {
         if (!userId || !tripId) return;
-        const unsub = onSnapshot(doc(db, `users/${userId}/trips/${tripId}`), (doc) => {
-            doc.exists() ? setTrip({ id: doc.id, ...doc.data() }) : onBack();
+        const unsub = onSnapshot(doc(db, `users/${userId}/trips/${tripId}`), (snap) => {
+            snap.exists() ? setTrip({ id: snap.id, ...snap.data() }) : onBack();
         });
         return () => unsub();
     }, [userId, tripId, onBack]);
