@@ -12,8 +12,8 @@ function TripScreen({ userId, tripId, onSelectSection, onBack, t, showNotificati
 
     useEffect(() => {
         if (!userId || !tripId) return;
-        const unsub = onSnapshot(doc(db, `users/${userId}/trips/${tripId}`), (doc) => {
-            doc.exists() ? setTrip({ id: doc.id, ...doc.data() }) : onBack();
+        const unsub = onSnapshot(doc(db, `users/${userId}/trips/${tripId}`), (snap) => {
+            snap.exists() ? setTrip({ id: snap.id, ...snap.data() }) : onBack();
         }, (error) => {
             console.error("Error fetching trip:", error);
             onBack();
