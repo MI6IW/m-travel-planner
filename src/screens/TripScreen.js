@@ -5,6 +5,7 @@ import EditTripModal from "../components/EditTripModal";
 import AddSectionModal from "../components/AddSectionModal";
 import { db } from "../firebase/firebase";
 import { ArrowLeftIcon, SuitcaseIcon, CameraIcon, LinkIcon, WalletIcon, PlusIcon, FolderPlusIcon, EditIcon, MapPinIcon, CalendarIcon } from "../components/icons";
+import PropTypes from "prop-types";
 function TripScreen({ userId, tripId, onSelectSection, onBack, t, showNotification }) {
     const [trip, setTrip] = useState(null);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -82,3 +83,12 @@ function TripScreen({ userId, tripId, onSelectSection, onBack, t, showNotificati
 }
 
 export default TripScreen;
+
+TripScreen.propTypes = {
+    userId: PropTypes.string.isRequired,
+    tripId: PropTypes.string.isRequired,
+    onSelectSection: PropTypes.func.isRequired,
+    onBack: PropTypes.func.isRequired,
+    t: PropTypes.object.isRequired,
+    showNotification: PropTypes.func.isRequired,
+};

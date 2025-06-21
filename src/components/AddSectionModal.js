@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { doc, updateDoc } from 'firebase/firestore';
+import PropTypes from 'prop-types';
 import BaseModal from './BaseModal';
 import { db } from '../firebase/firebase';
 
@@ -38,3 +39,13 @@ export default function AddSectionModal({ isOpen, onClose, userId, tripId, exist
     </BaseModal>
   );
 }
+
+AddSectionModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  userId: PropTypes.string.isRequired,
+  tripId: PropTypes.string.isRequired,
+  existingSections: PropTypes.array.isRequired,
+  t: PropTypes.object.isRequired,
+  showNotification: PropTypes.func.isRequired,
+};

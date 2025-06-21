@@ -1,6 +1,7 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertTriangleIcon, InfoIcon, CheckCircleIcon, PlusIcon } from "./icons";
+import PropTypes from "prop-types";
 function Notification({ notification, onClear }) {
     const { message, type } = notification || {};
     
@@ -37,3 +38,11 @@ function Notification({ notification, onClear }) {
     );
 }
 export default Notification;
+
+Notification.propTypes = {
+  notification: PropTypes.shape({
+    message: PropTypes.string,
+    type: PropTypes.string,
+  }),
+  onClear: PropTypes.func.isRequired,
+};

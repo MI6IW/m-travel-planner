@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { SparklesIcon } from "./icons";
 import { useAutosizeTextArea } from "../hooks/useAutosizeTextArea";
+import PropTypes from "prop-types";
 function EditableItem({ item, setItem, onSave, onCancel, isLink, isExpense, apiKey, tripLocation, language, t, model, showNotification }) {
     const [isGeneratingDesc, setIsGeneratingDesc] = useState(false);
     const textAreaRef = useRef(null);
@@ -62,5 +63,20 @@ function EditableItem({ item, setItem, onSave, onCancel, isLink, isExpense, apiK
         </li>
     );
 }
+
+EditableItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    setItem: PropTypes.func.isRequired,
+    onSave: PropTypes.func.isRequired,
+    onCancel: PropTypes.func.isRequired,
+    isLink: PropTypes.bool,
+    isExpense: PropTypes.bool,
+    apiKey: PropTypes.string,
+    tripLocation: PropTypes.string,
+    language: PropTypes.string,
+    t: PropTypes.object.isRequired,
+    model: PropTypes.string,
+    showNotification: PropTypes.func.isRequired,
+};
 
 export default EditableItem;

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PlusIcon, SparklesIcon } from "./icons";
 import ListItem from "./ListItem";
 import EditableItem from "./EditableItem";
+import PropTypes from "prop-types";
 function SectionDetail({ title, items, placeholder, updateSectionItems, isLink = false, isExpense = false, apiKey, aiPrompt, aiSchema, tripLocation, language, t, model, showNotification }) {
     const [inputValue, setInputValue] = useState('');
     const [inputValue2, setInputValue2] = useState('');
@@ -110,3 +111,20 @@ function SectionDetail({ title, items, placeholder, updateSectionItems, isLink =
 }
 
 export default SectionDetail;
+
+SectionDetail.propTypes = {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    updateSectionItems: PropTypes.func.isRequired,
+    isLink: PropTypes.bool,
+    isExpense: PropTypes.bool,
+    apiKey: PropTypes.string,
+    aiPrompt: PropTypes.string,
+    aiSchema: PropTypes.object,
+    tripLocation: PropTypes.string,
+    language: PropTypes.string,
+    t: PropTypes.object.isRequired,
+    model: PropTypes.string,
+    showNotification: PropTypes.func.isRequired,
+};

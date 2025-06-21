@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 export default function BaseModal({ isOpen, onClose, children }) {
   const modalRef = useRef();
@@ -25,3 +26,9 @@ export default function BaseModal({ isOpen, onClose, children }) {
     </AnimatePresence>
   );
 }
+
+BaseModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node,
+};
